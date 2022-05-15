@@ -6,18 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Banking Solutions</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Banking Solutions</title>
 </head>
 <style>
-  
-.btn-info{
+  .btn-info {
     background-color: #ec7f9e;
-}
-.btn-info:hover{
+  }
+
+  .btn-info:hover {
     background-color: #820c68;
-}
+
+  }
 </style>
+<script>
+  function transfer(){
+    document.getElementById("exampleInputAcc").innerHTML="<?php echo $res['account_no'] ?>"
+  }
+  </script>
 <body>
   <nav class="navbar">
     <!-- LOGO -->
@@ -64,16 +70,34 @@
       echo "<tbody>";
       echo "<tr>";
       echo "<th scope=\"row\">";
-      echo  "". $res['account_no'] . "</td>"."</th>";
+      echo  "" . $res['account_no'] . "</td>" . "</th>";
       echo "<td>" . $res['name'] . "</td>";
       echo "<td>" . $res['email'] . "</td>";
       echo "<td>" . $res['balance'] . "</td>";
-      echo "<td><button type=\"button\" class=\"btn btn-info\">Transfer</button></td>";
-      
-      
+      echo "<td> <button type=\"button\" class=\"btn btn-info\" onclick=\"transfer()\">Transfer</button></td>";
     }
+
     ?>
-    
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1"> From Account: </label>
+    <input type="number" class="form-control" id="exampleInputAcc">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1"> To Account: </label>
+    <input type="number" class="form-control" id="exampleInputAcc1">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1"> Enter Amount: </label>
+    <input type="number" class="form-control" id="exampleInputAmount">
+  </div>
+  
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
   </table>
 
 </body>
