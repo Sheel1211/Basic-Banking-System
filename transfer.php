@@ -86,16 +86,21 @@ if (isset($_POST['submit'])) {
     $receive =  $val2 + $amount;
     echo "The receiver's new balance  is: " . $receive;
 
-
+    if($amount > $val1){
+        header("Location:failed.html");
+    }
+    else{
 
     $sql3 = "UPDATE customer_details SET balance ='$send' WHERE account_no = '$sender'; ";
     $sql3 .= "UPDATE customer_details SET balance ='$receive' WHERE account_no = '$receiver' ";
 
     if ($conn -> multi_query($sql3)) {
+        header("Location:success.html");
         echo "<br>Money transferred successfully<br>";
     } else {
         die("Money can't be transferred");
     }
+}
 }
 
 ?>
