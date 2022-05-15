@@ -19,11 +19,7 @@
 
   }
 </style>
-<script>
-  function transfer(){
-    document.getElementById("exampleInputAcc").innerHTML="<?php echo $res['account_no'] ?>"
-  }
-  </script>
+
 <body>
   <nav class="navbar">
     <!-- LOGO -->
@@ -74,29 +70,13 @@
       echo "<td>" . $res['name'] . "</td>";
       echo "<td>" . $res['email'] . "</td>";
       echo "<td>" . $res['balance'] . "</td>";
-      echo "<td> <button type=\"button\" class=\"btn btn-info\" onclick=\"transfer()\">Transfer</button></td>";
+      echo "<td><a href=\"transfer.php\"> <button type=\"button\" class=\"btn btn-info\" onclick=\"transfer()\">Transfer</button></a></td>";
     }
+
 
     ?>
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1"> From Account: </label>
-    <input type="number" class="form-control" id="exampleInputAcc">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1"> To Account: </label>
-    <input type="number" class="form-control" id="exampleInputAcc1">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1"> Enter Amount: </label>
-    <input type="number" class="form-control" id="exampleInputAmount">
-  </div>
-  
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 
   </table>
 
