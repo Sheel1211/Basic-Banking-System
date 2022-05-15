@@ -9,7 +9,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Banking Solutions</title>
 </head>
-
+<style>
+  
+.btn-info{
+    background-color: #ec7f9e;
+}
+.btn-info:hover{
+    background-color: #820c68;
+}
+</style>
 <body>
   <nav class="navbar">
     <!-- LOGO -->
@@ -45,6 +53,7 @@
         <th scope="col">Name</th>
         <th scope="col">E-mail</th>
         <th scope="col">Balance</th>
+        <th scope="col">Operation</th>
       </tr>
     </thead>
 
@@ -59,8 +68,9 @@
       echo "<td>" . $res['name'] . "</td>";
       echo "<td>" . $res['email'] . "</td>";
       echo "<td>" . $res['balance'] . "</td>";
+      echo "<td><button type=\"button\" class=\"btn btn-info\">Transfer</button></td>";
       
-      // echo "<td><a href=\"edit.php?id=".$res['id']."\">Edit</a></td>  <td><a href=\"delete.php?id=".$res['id']."\">Delete</a></td></tr>";
+      
     }
     ?>
     

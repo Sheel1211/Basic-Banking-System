@@ -143,3 +143,7 @@ input[type=checkbox] {
     }
 
 }
+
+.btn-info{
+    background-color: #ec7f9e;
+}
