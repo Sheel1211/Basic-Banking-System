@@ -52,12 +52,7 @@ if (isset($_POST['submit'])) {
     $amount = $_POST['amount'];
 
 
-    // $sql1="SELECT * FROM customer_details WHERE 'account_no' = '$sender'";
 
-    // // $val1=$conn->query($sql1);
-    // mysqli_query($conn,$sql1);
-    // $result=mysqli_fetch_assoc($val);
-    // echo $result['balance'];
 
 
     $result = mysqli_query($conn, "SELECT * FROM customer_details WHERE account_no = '$sender' ORDER BY account_no ASC");
@@ -86,21 +81,31 @@ if (isset($_POST['submit'])) {
     $receive =  $val2 + $amount;
     echo "The receiver's new balance  is: " . $receive;
 
-    if($amount > $val1){
+    if ($amount > $val1) {
         header("Location:failed.html");
-    }
-    else{
-
-    $sql3 = "UPDATE customer_details SET balance ='$send' WHERE account_no = '$sender'; ";
-    $sql3 .= "UPDATE customer_details SET balance ='$receive' WHERE account_no = '$receiver' ";
-
-    if ($conn -> multi_query($sql3)) {
-        header("Location:success.html");
-        echo "<br>Money transferred successfully<br>";
     } else {
-        die("Money can't be transferred");
+
+        $sql3 = "UPDATE customer_details SET balance ='$send' WHERE account_no = '$sender'; ";
+        $sql3 .= "UPDATE customer_details SET balance ='$receive' WHERE account_no = '$receiver' ";
+
+        if ($conn->multi_query($sql3)) {
+            //header("Location:success.html");
+            echo "<br>Money transferred successfully<br>";
+            $date = date("Y-m-d H:i:s");
+            echo $date;
+            echo var_dump($date);
+            // $sql4 = "INSERT INTO transaction_details VALUES(' ',$sender,$receiver,$amount,'$date','success');";
+            $sql = "INSERT INTO 'transaction_details' VALUES('3','1003','1001','15000','2022-05-15 13:43:23','success')";
+            $ab = mysqli_query($conn, $sql);
+            if ($ab) {
+                echo "Transaction Table Updated Successfully!!";
+            } else {
+                echo "Transaction Table Can't Be Updated !!";
+            }
+        } else {
+            die("Money can't be transferred");
+        }
     }
-}
 }
 
 ?>
