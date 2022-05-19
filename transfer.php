@@ -12,49 +12,42 @@
 
 <body>
 
+    <form action="transfer.php" method="POST">
+        <div class="form-group">
+            <label for="exampleInputEmail1"> From Account: </label>
+            <input type="number" class="form-control" name="sender" id="exampleInputAcc">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> To Account: </label>
+            <input type="number" class="form-control" name="receiver" id="exampleInputAcc1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Enter Amount: </label>
+            <input type="number" class="form-control" name="amount" id="exampleInputAmount">
+        </div>
+
+
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    </form>
 </body>
 
 </html>
-<form action="transfer.php" method="POST">
-    <div class="form-group">
-        <label for="exampleInputEmail1"> From Account: </label>
-        <input type="number" class="form-control" name="sender" id="exampleInputAcc">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1"> To Account: </label>
-        <input type="number" class="form-control" name="receiver" id="exampleInputAcc1">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1"> Enter Amount: </label>
-        <input type="number" class="form-control" name="amount" id="exampleInputAmount">
-    </div>
 
-
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-</form>
 
 
 <?php
-
+    //Making Connection with database
 if (isset($_POST['submit'])) {
-    $conn = mysqli_connect("localhost", "root", "", "projects");
+    include 'connect.php';
+    
 
-    if ($conn) {
-        echo "Database connected Successfully";
-    } else {
-        die("Database can't be connected");
-    }
-
-
+    //Fetching values from form
     $sender = $_POST['sender'];
     $receiver = $_POST['receiver'];
     $amount = $_POST['amount'];
 
-
-
-
-
+    //Displaying the list of customers available for transferring money
     $result = mysqli_query($conn, "SELECT * FROM customer_details WHERE account_no = '$sender' ORDER BY account_no ASC");
     while ($res = mysqli_fetch_array($result)) {
 
@@ -70,39 +63,61 @@ if (isset($_POST['submit'])) {
     }
 
 
-    echo "The amount to be transferred is $amount <br>";
+    //Sender's new balance
     $number1 = $val1;
     $number2 = $amount;
     $send =  $val1 - $amount;
-    echo "The sender's new balance  is: " . $send;
 
+    //Receiver's new balance
     $number1 = $val2;
     $number2 = $amount;
     $receive =  $val2 + $amount;
-    echo "The receiver's new balance  is: " . $receive;
 
-    if ($amount > $val1) {
+
+    if ($amount > $val1) {                          //Checking if required amount is larger than balance
         header("Location:failed.html");
-    } else {
+        $a = 'failed';
+        $date = date("Y-m-d H:i:s a");
+        include 'connect.php';
+        $sql4 = "INSERT INTO transaction_details VALUES('',$sender,$receiver,$amount,\"$date\",\"$a\");";
+
+
+        if (mysqli_query($conn, $sql4)) {
+            echo "Transaction Table Updated Successfully!!";
+        }
+
+    } 
+
+    else {
 
         $sql3 = "UPDATE customer_details SET balance ='$send' WHERE account_no = '$sender'; ";
         $sql3 .= "UPDATE customer_details SET balance ='$receive' WHERE account_no = '$receiver' ";
 
         if ($conn->multi_query($sql3)) {
-            //header("Location:success.html");
-            echo "<br>Money transferred successfully<br>";
-            $date = date("Y-m-d H:i:s");
-            echo $date;
-            echo var_dump($date);
-            // $sql4 = "INSERT INTO transaction_details VALUES(' ',$sender,$receiver,$amount,'$date','success');";
-            $sql = "INSERT INTO 'transaction_details' VALUES('3','1003','1001','15000','2022-05-15 13:43:23','success')";
-            $ab = mysqli_query($conn, $sql);
-            if ($ab) {
+            header("Location:success.html");
+
+            $date = date("Y-m-d H:i:s a");
+            $a = 'success';
+
+            include 'connect.php';
+            $sql4 = "INSERT INTO transaction_details VALUES('',$sender,$receiver,$amount,\"$date\",\"$a\");";
+
+            if (mysqli_query($conn, $sql4)) {
+                echo "Transaction Table Updated Successfully!!";
+            } 
+        }
+        
+        else {
+            $a = 'failed';
+            $date = date("Y-m-d H:i:s a");
+            include 'connect.php';
+            $sql4 = "INSERT INTO transaction_details VALUES('',$sender,$receiver,$amount,\"$date\",\"$a\");";
+
+            if (mysqli_query($conn, $sql4)) {
                 echo "Transaction Table Updated Successfully!!";
             } else {
                 echo "Transaction Table Can't Be Updated !!";
             }
-        } else {
             die("Money can't be transferred");
         }
     }
