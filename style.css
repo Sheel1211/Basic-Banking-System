@@ -5,25 +5,32 @@
 }
 
 body {
-    /* background-image: url('Images/background.jpg');
-    
+    background-image: url('Images/background.jpg');
+
     background-size: auto;
     background-repeat: no-repeat;
-     background-size: contain; 
-     height: 100vh; */
-     font-family: cursive;
+
+    background-size: cover; 
+
+    font-family: cursive;
+    height: 100vh;  
+
+    /* background-image: url('Images/background.jpg'); 
     
+     background-image: url('Images/background.jpg');
+     background-size:  
+     background-size: auto;
+     background-repeat: no-repeat;
+      background-size: contain; 
+      height: 100vh;
+       width: auto; 
+      width:fit-content; */
+ 
   
 }
 
 .bg{
-    background-image: url('Images/background.jpg');
-    /* background-size:  */
-    background-size: auto;
-    background-repeat: no-repeat;
-     background-size: contain; 
-     height: 100vh;
-
+    
 }
 
 
@@ -155,7 +162,7 @@ input[type=checkbox] {
     .dropdown li:hover {
         background-color: #820c68;
     }
-
+    
 }
 
 .btn-info{
@@ -165,6 +172,57 @@ input[type=checkbox] {
 .table{
     background-color: #fff;
 }
+
+.flex-parent {
+    display: flex;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+@media(min-width: 900px) {
+    button.margin-right {
+        margin-right: 20px;
+    }
+      button.margin-top {
+          width:180px;
+          height:60px;
+          margin-top: 510px;
+        background-color:  #ec7f9e;
+    }
+    button.margin-left {
+        height:60px;
+        margin-left: 510px;
+      }
+    
+      button.margin-top button:hover{
+          background-color: #820c68;
+    
+    }
+    
+}
+
+button.margin-right {
+    margin-right: 20px;
+}
+  button.margin-top {
+      width:180px;
+      height:60px;
+      margin-top: 310px;
+    background-color:  #ec7f9e;
+}
+button.margin-left {
+    background-color:  #ec7f9e;
+    height:60px;
+   
+  }
+
+  button.margin-top button:hover{
+      background-color: #820c68;
+
+}
+
 
 /* //update drop down responsive
 //background image */
