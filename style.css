@@ -5,10 +5,11 @@
 }
 
 body {
-    background-image: url('Images/background1.jpg');
+    background-image: url('Images/background.jpg');
     /* background-size:  */
+    background-size: auto;
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: contain; */
     font-family: cursive;
 }
 
