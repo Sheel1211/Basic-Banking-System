@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="view.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <title>Banking Solutions</title>
   <link rel="icon" href="Images/logo.png">
@@ -20,9 +20,12 @@
 
   }
   .table{
-    background-color: #66d9ff;
+    background-color: rgb(109, 160, 204);
     margin-top: 10px;
+    color:white;
   }
+
+  
 </style>
 
 <body>

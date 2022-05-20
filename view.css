@@ -24,12 +24,26 @@ body {
 	background-attachment: fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
-   
+   /* background-color:rgb(229, 184, 224); */
 
 
 }
 
-
+body:after {
+	content: '';
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('Images/background.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	filter: blur(10px);
+}
 
 
 a {
@@ -178,83 +192,3 @@ input[type=checkbox] {
 .jc-center {
     justify-content: center;
 }
-
-@media(min-width: 900px) {
-    button.margin-right {
-        margin-right: 20px;
-    }
-
-    button.margin-top {
-        width: 180px;
-        height: 60px;
-        margin-top: 510px;
-        background-color: #ec7f9e;
-        border-radius: 15px;
-        padding: 5px 14px;
-        font-family: cursive;
-        font-size: 15px;
-        text-align: center;
-        text-decoration: none;
-        color: white;
-    }
-
-    button.margin-left {
-        height: 60px;
-        margin-left: 510px;
-    }
-
-    button.margin-top button:hover {
-        background-color: #820c68;
-
-    }
-
-    button.margin-top a {
-        color: white;
-    }
-    button.margin-top:hover {
-        background-color: #820c68;
-    }
-
-}
-
-button.margin-right {
-    margin-right: 20px;
-}
-
-button.margin-top {
-    width: 180px;
-    height: 60px;
-    margin-top: 460px;
-    margin-bottom: 100px;
-    background-color: #ec7f9e;
-    border-radius: 15px;
-    /* padding: 20px; */
-    padding: 5px 14px;
-    font-family: cursive;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-}
-
-button.margin-top a {
-    color: white;
-}
-
-button.margin-left {
-    background-color: #ec7f9e;
-    height: 60px;
-
-}
-
-button.margin-top button:hover {
-    background-color: #820c68;
-
-}
-
-
-/* //update drop down responsive
-//background image */
-
-
-
