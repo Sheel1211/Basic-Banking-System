@@ -28,7 +28,7 @@
 <body>
   <nav class="navbar">
     <!-- LOGO -->
-    <div class="logo">ALPHA BANKING</div>
+    <div class="logo"><img src="Images/logo.png" width="20px" margin-top="4px">    ALPHA BANKING</div>
     <!-- NAVIGATION MENU -->
     <ul class="nav-links">
       <!-- USING CHECKBOX HACK -->
@@ -41,11 +41,11 @@
         <li class="services">
           <a href="/">Services</a>
           <!-- DROPDOWN MENU -->
-          <!-- <ul class="dropdown">
+          <ul class="dropdown">
              <li><a href="viewTransactions.html">Show Transactions </a></li>
              <li><a href="viewCustomers.html">Transfer Money</a></li>
              
-           </ul> -->
+           </ul>
         </li>
         <li><a href="/">Pricing</a></li>
         <li><a href="/">Contact</a></li>

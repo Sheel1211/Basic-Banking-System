@@ -7,13 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transferring</title>
     <link rel="icon" href="Images/logo.png">
+    <link rel="stylesheet" href="transfer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
 
 <body>
 
-    <form action="transfer.php" method="POST">
+<div class="contact-form">
+		<img alt="" class="avatar" src="https://i.postimg.cc/zDyt7KCv/a1.jpg">
+		<h2>Enter Details</h2>
+		<form action="transfer.php" method="POST">
+			<p>From Account: </p><input placeholder="Enter Sender Account Number" name="sender" type="number">
+			<p>To Account: </p><input placeholder="Enter Receiver Account Number" name="receiver" type="number">
+            <p>Amount: </p><input placeholder="Enter Amount" name="amount" type="number">
+            <input type="submit" value="submit" name="submit">
+			
+		</form>
+	</div>
+
+
+    <!-- <form action="transfer.php" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1"> From Account: </label>
             <input type="number" class="form-control" name="sender" id="exampleInputAcc">
@@ -30,7 +44,7 @@
 
 
         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </form> --> 
 </body>
 
 </html>
