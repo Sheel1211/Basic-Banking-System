@@ -10,10 +10,10 @@ body {
     background-size: auto;
     background-repeat: no-repeat;
 
-    background-size: cover; 
+    background-size: cover;
 
     font-family: cursive;
-    height: 100vh;  
+    height: 100vh;
 
     /* background-image: url('Images/background.jpg'); 
     
@@ -25,13 +25,11 @@ body {
       height: 100vh;
        width: auto; 
       width:fit-content; */
- 
-  
+
+
 }
 
-.bg{
-    
-}
+
 
 
 a {
@@ -162,14 +160,14 @@ input[type=checkbox] {
     .dropdown li:hover {
         background-color: #820c68;
     }
-    
+
 }
 
-.btn-info{
+.btn-info {
     background-color: #ec7f9e;
 }
 
-.table{
+.table {
     background-color: #fff;
 }
 
@@ -185,41 +183,72 @@ input[type=checkbox] {
     button.margin-right {
         margin-right: 20px;
     }
-      button.margin-top {
-          width:180px;
-          height:60px;
-          margin-top: 510px;
-        background-color:  #ec7f9e;
+
+    button.margin-top {
+        width: 180px;
+        height: 60px;
+        margin-top: 510px;
+        background-color: #ec7f9e;
+        border-radius: 15px;
+        padding: 5px 14px;
+        font-family: cursive;
+        font-size: 15px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
     }
+
     button.margin-left {
-        height:60px;
+        height: 60px;
         margin-left: 510px;
-      }
-    
-      button.margin-top button:hover{
-          background-color: #820c68;
-    
     }
-    
+
+    button.margin-top button:hover {
+        background-color: #820c68;
+
+    }
+
+    button.margin-top a {
+        color: white;
+    }
+    button.margin-top:hover {
+        background-color: #820c68;
+    }
+
 }
 
 button.margin-right {
     margin-right: 20px;
 }
-  button.margin-top {
-      width:180px;
-      height:60px;
-      margin-top: 310px;
-    background-color:  #ec7f9e;
-}
-button.margin-left {
-    background-color:  #ec7f9e;
-    height:60px;
-   
-  }
 
-  button.margin-top button:hover{
-      background-color: #820c68;
+button.margin-top {
+    width: 180px;
+    height: 60px;
+    margin-top: 460px;
+    margin-bottom: 100px;
+    background-color: #ec7f9e;
+    border-radius: 15px;
+    /* padding: 20px; */
+    padding: 5px 14px;
+    font-family: cursive;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+button.margin-top a {
+    color: white;
+}
+
+button.margin-left {
+    background-color: #ec7f9e;
+    height: 60px;
+
+}
+
+button.margin-top button:hover {
+    background-color: #820c68;
 
 }
 
