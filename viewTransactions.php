@@ -33,7 +33,7 @@
   <nav class="navbar">
 
     <!-- LOGO -->
-    <div class="logo"><img src="Images/logo.png" width="20px" margin-top="4px">    ALPHA BANKING</div>
+    <div class="logo"><img src="Images/logo.png" width="20px" margin-top="4px">    META BANKING</div>
 
     <!-- NAVIGATION MENU -->
     <ul class="nav-links">
